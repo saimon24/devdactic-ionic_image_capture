@@ -17,3 +17,13 @@ angular.module('starter', ['ionic', 'ngCordova'])
     }
   });
 })
+
+.controller('imageController', function($scope) {
+    $scope.addImage = function() {
+        console.log("add image");
+    }
+
+    $scope.urlForImage = function(imgUrl) {
+        console.log("get correct path for image");
+    }
+});
