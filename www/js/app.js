@@ -19,9 +19,12 @@ angular.module('starter', ['ionic', 'ngCordova'])
 })
 
 .controller('imageController', function($scope, $cordovaCamera, $cordovaFile) {
+    // 1
     $scope.images = [];
 
+
     $scope.addImage = function() {
+        // 2
         var options = {
             destinationType : Camera.DestinationType.FILE_URI,
             sourceType : Camera.PictureSourceType.CAMERA, // Camera.PictureSourceType.PHOTOLIBRARY
@@ -30,8 +33,10 @@ angular.module('starter', ['ionic', 'ngCordova'])
             popoverOptions: CameraPopoverOptions,
         };
 
+        // 3
         $cordovaCamera.getPicture(options).then(function(imageData) {
 
+            // 4
             onImageSuccess(imageData);
 
             function onImageSuccess(fileURI) {
@@ -42,6 +47,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
                 window.resolveLocalFileSystemURL(fileURI, copyFile, fail);
             }
 
+            // 5
             function copyFile(fileEntry) {
                 var name = fileEntry.fullPath.substr(fileEntry.fullPath.lastIndexOf('/') + 1);
                 var newName = makeid() + name;
@@ -57,6 +63,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
                 fail);
             }
 
+            // 6
             function onCopySuccess(entry) {
                 $scope.$apply(function () {
                     $scope.images.push(entry.nativeURL);
