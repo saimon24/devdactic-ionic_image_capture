@@ -23,13 +23,12 @@
     <script src="js/app.js"></script>
   </head>
   <body ng-app="starter">
-
-          <ion-view ng-controller="imageController">
+          <ion-view class="has-header padding" ng-controller="imageController">
               <button class="button button-energized" ng-click="addImage()">
                   Add image
-              </button>
+              </button><br><br>
               <ion-scroll>
-                  <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" height="150px"/>
+                  <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" height="200px"/>
               </ion-scroll>
           </ion-view>
   </body>
