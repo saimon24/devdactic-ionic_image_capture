@@ -24,9 +24,15 @@
   </head>
   <body ng-app="starter">
           <ion-view class="has-header padding" ng-controller="imageController">
+
               <button class="button button-energized" ng-click="addImage()">
                   Add image
-              </button><br><br>
+              </button>
+              <button ng-click="sendEmail()" class="button button-icon icon ion-email">
+                  Send mail
+              </button>
+
+              <br><br>
               <ion-scroll>
                   <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" height="200px"/>
               </ion-scroll>
