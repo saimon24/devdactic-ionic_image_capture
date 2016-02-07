@@ -111,8 +111,8 @@ angular.module('starter', ['ionic', 'ngCordova'])
             // 4
             window.plugin.email.open({
                 to:          ["saimon@devdactic.com"], // email addresses for TO field
-                cc:          Array, // email addresses for CC field
-                bcc:         Array, // email addresses for BCC field
+                cc:          [], // email addresses for CC field
+                bcc:         [], // email addresses for BCC field
                 attachments: images, // file paths or base64 data streams
                 subject:    "Just some images", // subject of the email
                 body:       bodyText, // email body (for HTML, set isHtml to true)
